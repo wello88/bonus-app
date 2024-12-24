@@ -1,0 +1,214 @@
+// Variables
+$primary-color: #0066cc;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$border-radius: 4px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: white;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+
+    .header-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .create-btn {
+      padding: 0.5rem 1rem;
+      background: $success-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+
+      &:hover {
+        background: darken($success-color, 10%);
+      }
+    }
+
+    .logout-btn {
+      padding: 0.5rem 1rem;
+      background: $danger-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+
+      &:hover {
+        background: darken($danger-color, 10%);
+      }
+    }
+  }
+
+  .requests-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .request-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+
+      .request-details {
+        margin: 1rem 0;
+      }
+
+      .status {
+        font-weight: 500;
+        &.pending { color: #f59e0b; }
+        &.approved { color: $success-color; }
+        &.rejected { color: $danger-color; }
+      }
+
+      .actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        button {
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: $border-radius;
+          cursor: pointer;
+          color: white;
+
+          &.approve-btn {
+            background: $success-color;
+            &:hover { background: darken($success-color, 10%); }
+          }
+
+          &.reject-btn {
+            background: $danger-color;
+            &:hover { background: darken($danger-color, 10%); }
+          }
+        }
+      }
+    }
+  }
+
+  .bonus-requests {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .bonus-request {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    h3 {
+      margin: 0;
+    }
+    button {
+      margin-right: 10px;
+    }
+  }
+
+  .bonus-request-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    .request-details {
+      margin: 1rem 0;
+    }
+
+    .status {
+      font-weight: 500;
+      &.pending { color: #f59e0b; }
+      &.approved { color: #10b981; }
+      &.rejected { color: #ef4444; }
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+
+      button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        
+        &.approve-btn {
+          background: #10b981;
+          color: white;
+          &:hover { background: #059669; }
+        }
+        
+        &.reject-btn {
+          background: #ef4444;
+          color: white;
+          &:hover { background: #dc2626; }
+        }
+      }
+    }
+  }
+
+  .loading, .error {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .error {
+    color: #ef4444;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+
+    .create-btn {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      
+      &:hover {
+        background: #0052a3;
+      }
+    }
+
+    .logout-btn {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      
+      &:hover {
+        background: #c82333;
+      }
+    }
+  }
+}
